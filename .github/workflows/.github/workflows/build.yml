@@ -1,0 +1,10 @@
+name: Build iOS App
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: |
+          xcodebuild -project YourProject.xcodeproj -scheme YourScheme -sdk iphoneos -configuration Release CODE_SIGNING_ALLOWED=NO
